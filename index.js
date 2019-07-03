@@ -57,6 +57,9 @@ function protected(req, res, next) {
 }
 
 server.get("/", (req, res) => {
+  db("users").then(users => {
+    console.log(users.length, "users");
+  });
   res.status(200).json("API is running");
 });
 
